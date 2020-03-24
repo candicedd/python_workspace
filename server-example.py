@@ -1,5 +1,6 @@
 from http.server import BaseHTTPRequestHandler
 import logging
+import random
 
 logger = logging.getLogger("Server")
 logger.setLevel(logging.INFO)
@@ -14,7 +15,12 @@ class GetHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         message = 'Hello! You are visiting a web server built in Python!'
-        logger.info(message)
+
+        if self.path == '/random-number':
+            random_number = random.SystemRandom().randint(1, 10)
+            message += '\n\n\nRandom Number:\n    ' + str(random_number)
+            logger.info('random number: ' + str(random_number))
+
         self.send_response(200)
         self.send_header('Content-Type',
                          'text/plain; charset=utf-8')
