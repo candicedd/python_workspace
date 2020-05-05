@@ -21,3 +21,5 @@ print (Aufgabe8_b.G1.AnzahlMitarbeiter)
 print (Aufgabe8_b.G2.AnzahlMitarbeiter)
 print (Aufgabe8_b.Ab1.AnzahlGruppen)
 print(Aufgabe8_b.Ab1.AnzahlAbteilungsMiarbeiter) """
+
+print("Aufgabe8_c")
